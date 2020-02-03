@@ -6,7 +6,7 @@ __Name: Phuong Ho__
 
 #### 1. Introduction: 
 
-Throughout the project, I am able to utilize the SAS programming language to retrieve useful tags of interest from customer review data available on Amazon Web Server (AWS). In specific, I look at the review body and review header (variable names explained in part (2)) to find keywords objectives. From there, I use PROC PLOT for bar plots to see frequencies of star ratings for the count of negative and positive words I want to scan. Some of the simulating results will be discussed in more detail below. Source codes contain other macros to load, sort data, get frequencies, and other PROC SQL queries. I have written macros to sort data concerning star ratings, get the frequency between two variables, purposefully for star ratings and verification of payments. Moreover, I use PROC SGPLOT and PROC PANEL to examine the distribution of star ratings with and without verified purchases (the purchase that was made through *Amazon* website). Notably, some of the results are different between data sets from different countries.
+<p>Throughout the project, I am able to utilize the SAS programming language to retrieve useful tags of interest from customer review data available on Amazon Web Server (AWS). In specific, I look at the review body and review header (variable names explained in part (2)) to find keywords objectives. From there, I use PROC PLOT for bar plots to see frequencies of star ratings for the count of negative and positive words I want to scan. Some of the simulating results will be discussed in more detail below. Source codes contain other macros to load, sort data, get frequencies, and other PROC SQL queries. I have written macros to sort data concerning star ratings, get the frequency between two variables, purposefully for star ratings and verification of payments. Moreover, I use PROC SGPLOT and PROC PANEL to examine the distribution of star ratings with and without verified purchases (the purchase that was made through *Amazon* website). Notably, some of the results are different between data sets from different countries.</p>
 
 From applying the source codes, changing word lists and analyzing the results, companies can find important aspects of their services or products which they want to inspect from customer reviews. This would be a great way for them to find other aspects of the products which were rated low or negatively. After that, they could revise more effective business models to improve their products and services. The aspects of their products found in review text data can be packaging, price, condition, usage, quality, etc...
 
@@ -112,10 +112,12 @@ numWords	1	3146.50	<.0001
 
 In Display 5 and Display 6, the distribution of star ratings having negative words in the review body from the US and UK sampling data is shown. This is fairly interesting since the highest rating (5 stars) has the most percentage in the total number of negative words in both countries the US and UK (respectively 62.2% and 55.4%). This might be because the percentage of 5-star rating reviews is the largest from the US and UK data presented in Display 1, but further justifications and tests will be needed. I also try to use the same MACRO for plotting positive words with both of the sampling data above. The percentage of positive words increases as the star rating increases, which is explainable. As people love the products, they will use a lot of good words to describe it.
 
- ![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest/blob/master/Picture5.png"Display5")
+ ![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest/blob/master/Picture5.png "Display5")
+ 
 *Display 5. The bar plot of star rating percentage in the number of negative words in review body from US sampling data*
 
  ![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest/blob/master/Picture6.png "Display6")
+ 
 *Display 6. The bar plot of star rating percentage in the number of negative words in review body from UK sampling data*
 
 #### 5. Discussion:
