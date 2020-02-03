@@ -4,13 +4,16 @@ __Name: Phuong Ho__
 
 *This project aims at generating useful data from text input for further analysis given review data sets. I adopt different approaches to access and to understand the data provided such as PROC SQL, PROC IMPORT, PROC PANEL and so on. Most of the macros implemented to read different keywords and compare them with text read from the data. The project’ purpose is also to evaluate the count of important words related to rating stars. I further build some of the other code blocks to compare the star rating distribution of verified purchases compared to those of not verified purchases. From those steps, I can study the patterns existing in reviews’ ratings across different countries, mainly between the UK and the US, and across different products..*
 
-#### 1. Introduction: 
+___
+
+### 1. Introduction: 
 
 <p>Throughout the project, I am able to utilize the SAS programming language to retrieve useful tags of interest from customer review data available on Amazon Web Server (AWS). In specific, I look at the review body and review header (variable names explained in part (2)) to find keywords objectives. From there, I use PROC PLOT for bar plots to see frequencies of star ratings for the count of negative and positive words I want to scan. Some of the simulating results will be discussed in more detail below. Source codes contain other macros to load, sort data, get frequencies, and other PROC SQL queries. I have written macros to sort data concerning star ratings, get the frequency between two variables, purposefully for star ratings and verification of payments. Moreover, I use PROC SGPLOT and PROC PANEL to examine the distribution of star ratings with and without verified purchases (the purchase that was made through *Amazon* website). Notably, some of the results are different between data sets from different countries.</p>
 
 From applying the source codes, changing word lists and analyzing the results, companies can find important aspects of their services or products which they want to inspect from customer reviews. This would be a great way for them to find other aspects of the products which were rated low or negatively. After that, they could revise more effective business models to improve their products and services. The aspects of their products found in review text data can be packaging, price, condition, usage, quality, etc...
+___
 
-#### 2. Description of Data:
+### 2. Description of Data:
 
 The data used in this project is the dataset named ‘Amazon Customer Reviews Dataset’ retrieved from the AWS. This data set includes customer reviews for different categories in different countries from 1995 to 2015 described in 16 variables (explained in the table below). Accessing the index file and download data files using this link. The data set is mostly clean, already sorted by customer ID, and without any missing values. However, my main focus here is to figure out how to count the keywords of interest from review texts for further analysis to find appropriate aspects of products that need improving. 
 
@@ -51,8 +54,8 @@ Table of the variables used in this report:
 | Review headline | 	The title of the review | 
 | Review body | 	The review text | 
 
-
-#### 3. Strategy Employed:
+___
+### 3. Strategy Employed:
 
 Loading original tab-separated (.tsv) files from Amazon Web Server is the first challenge I face while doing this project. At first, I attempt doing it through INFILE data steps. Then, I figure out that utilizing PROC IMPORT is highly more efficient to read the data from .tsv files or tab-separated txt files since this PROC step converts them into data sets in SAS at the same time. I define the DELIMITER as tab, ‘09’x in SAS. I set DBMS to DLM to work with both txt and tsv files. Also, the variable headers are included, so I set GETNAMES as YES. Next, I improve the coding efficiency by creating a MACRO to import data. To test the MACRO, I apply it to all sample data from France on the website, and the extracted US and UK files.  At the end of the Source Code page, I also include another way of loading data by using PROC HTTP. I first define FILENAME with URL as a source, and then use INFILE and FILE to download tsv.gz directly from the website. After downloading data, I use the MACRO for PROC IMPORT above to read data as data sets.
 
@@ -67,8 +70,9 @@ Thereafter, I hope to assess the relationship between the number of words in rev
 Coming back to the main challenge to count keywords of interest, I employ the SCAN function to generate new data sets. In specific, I count the number of words in a sentence like above and define another loop through each word in the sentence, from 0 to the number of words in that sentence. Then I use the SCAN function for output. For the SCAN function, I use sentences at each index, the index, and delimiters like when I use for counting words. I also build a MACRO for reusing this step for both review headline and review body in the US and UK sampling data (the first 3000 rows). 
 
 From then on, I form data sets for words of interest by using INFILE text files with defined FIRSTOBS and LENGTH options to read the input. To use this step later to load keywords in other languages, I build a MACRO for it. I choose positive, negative, and categorical keywords for this step. I then utilize PROC SQL and queries to generate new data from evaluating matched important keywords with the words separated by the SCAN function above. I also create a table in PROC SQL for the star rating system, so later I can merge the number of positive and negative words. I implement the PROC SQL SELECT query to count the number of words from the three wordlists of my interest. I build a MACRO for this step with the input data set from review data, two output file names (one is the output data including star rating, number of positive words, number of negative words; one is the output for categorical keywords). I applied this MACRO for the four word-separated data sets generated above. Finally, to understand how the positive and negative words in related to star ratings, I build another MACRO. I run PROC SGPLOT to create bar plots showing the percentage of each star rating in the total number of positive or negative words. I test this MACRO using the data sets from the MACRO in the step right before plotting.
+___
 
-#### 4. Results:
+### 4. Results:
 
 First of all, from the three stacked bar plots in Display 1, we can see the percentage distribution for the two categories, verified and not verified the purchase, in the total number of customer reviews from the US, UK, and FR marketplaces. In this plot, we can also tell that there is a huge difference between the column from US sampling data and those of the two other countries. In the US sampling plot, the percentage of purchases without verifications (97.8%) is much bigger than that with verifications (2.2%). The other two plots show the opposite result. The UK column shows that the verified purchases covered about 89.4% of the number of reviews. Similarly, France data set’s column shows 93.9% of reviews come from verified payment through Amazon. 
 
@@ -119,8 +123,9 @@ In Display 5 and Display 6, the distribution of star ratings having negative wor
  ![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest/blob/master/Picture6.png "Display6")
  
 *Display 6. The bar plot of star rating percentage in the number of negative words in review body from UK sampling data*
+___
 
-#### 5. Discussion:
+### 5. Discussion:
 
 There are a lot of further research questions raised from the result section above. First of all, we can study the changes in the distribution of verified purchases in the total number of reviews through years or geography suggested in Display 1. Likewise, it is a compelling question to learn the variance of star rating distribution in verified and not verified purchases as presented in Display 2. Looking at Display 3 and Display 4, we might want to find an answer to whether the number of words of text data is stronger than the contents in reviews related to the number of helpful votes. We can also study the prediction of the number of helpful votes based on the number of words in the review headline and review body and compare the models. One can also change parameters in some of the MACROs to plot the frequency plots from the data other countries like CA and JP to see the patterns. Another promising research question is to understand why customers still use negative words in high star ratings presented in Display 5 and Display 6.  
 
