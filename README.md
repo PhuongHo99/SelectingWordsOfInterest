@@ -72,26 +72,23 @@ From then on, I form data sets for words of interest by using INFILE text files 
 
 First of all, from the three stacked bar plots in Display 1, we can see the percentage distribution for the two categories, verified and not verified the purchase, in the total number of customer reviews from the US, UK, and FR marketplaces. In this plot, we can also tell that there is a huge difference between the column from US sampling data and those of the two other countries. In the US sampling plot, the percentage of purchases without verifications (97.8%) is much bigger than that with verifications (2.2%). The other two plots show the opposite result. The UK column shows that the verified purchases covered about 89.4% of the number of reviews. Similarly, France data set’s column shows 93.9% of reviews come from verified payment through Amazon. 
 
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Display1")
+![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest.Picture1png "Display1")
  
 *Display 1. Three bar plots of star ratings’ percentage in verified purchases and not verified purchases from the US and UK extracted data and France sample data.*
 
 Display 2 presents the panel of frequency of star ratings in verified and not verified purchase for different marketplaces. While the plots from France and the UK sampling data suggests the frequency of star ratings in non-verified purchases does not vary as much as that on verified purchases, the plots from US sampling data show a reverse result. The contradictory between the three plots might happen as a result of the date range I select when extracting data. The first 3000 rows of the UK data and 50 rows of France sample data are retrieved between the year 2014 and 2015 while the first 3000 rows of the US data are from 1995 to 1998. However, this possibility of cause needs more investigations to justify. 
 
+![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest.Picture2png "Display2")
  
 *Display 2. The Panel for bar plots showing star ratings’ frequencies in verified purchases and not verified purchases from the US and UK extracted data and France sample data.*
 
 From the results of PROC GENMOD, I select three specific tables: Model Information, Analysis Of Maximum Likelihood Parameter Estimates, and LR Statistics For Type 3 Analysis in Display 3. The tables are generated from the review headline of US sampling data. The Model Information tells us the data set we use, the response variable and model with LINK function. The next table provides the coefficients (labeled Estimate), their standard errors (error), the Wald Chi-Square statistic, and associated p-values. The coefficients for the number of words in text data are statistically significant (<.0001).   The coefficient for the number of words is 0.0543. This means that the expected increase in log count of helpful votes for a one-unit increase in the number of words is 0.0543. In the last section of Display 3, the likelihood ratio chi-square of 172.87 with a p-value of 0.0001 tells us that our model as a whole fits significantly better than an empty model. In other words, this table indicates that the model between the number of words and helpful votes is statistically significant. There is a thought-provoking finding that the Chi-Square in LS Statistics of PROC GENMOD using the review body in Display 4 (3146.50) is much higher than the Chi-Square statistics of the model above. This may demonstrate using the number of words in the review headline is better for the Poisson model with the number of helpful votes. I also applied PROC GENMOD for UK sampling data and got the same results.
-
 
 Model Information
 Data Set	WORK.COUNTNUM1
 Distribution	Poisson
 Link Function	Log
 Dependent Variable	helpful_votes
-
-
 
 Analysis Of Maximum Likelihood Parameter Estimates
 Parameter	DF	Estimate	Standard
@@ -104,8 +101,6 @@ LR Statistics For Type 3 Analysis
 Source	DF	Chi-Square	Pr > ChiSq
 numWords	1	172.87	<.0001
 
-
-
 *Display 3. The selected table as a result of PROC GENMOD to model Poisson distribution between helpful votes and number of words in review headline from US sampling data*
 
 
@@ -113,15 +108,14 @@ LR Statistics For Type 3 Analysis
 Source	DF	Chi-Square	Pr > ChiSq
 numWords	1	3146.50	<.0001
 
-
 *Display 4. The LR Statistics For Type 3 Analysis of Poisson distribution between helpful votes and number of words in review body from US sampling data*
 
 In Display 5 and Display 6, the distribution of star ratings having negative words in the review body from the US and UK sampling data is shown. This is fairly interesting since the highest rating (5 stars) has the most percentage in the total number of negative words in both countries the US and UK (respectively 62.2% and 55.4%). This might be because the percentage of 5-star rating reviews is the largest from the US and UK data presented in Display 1, but further justifications and tests will be needed. I also try to use the same MACRO for plotting positive words with both of the sampling data above. The percentage of positive words increases as the star rating increases, which is explainable. As people love the products, they will use a lot of good words to describe it.
 
- 
+ ![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest.Picture5png "Display5")
 *Display 5. The bar plot of star rating percentage in the number of negative words in review body from US sampling data*
 
- 
+ ![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest.Picture6png "Display6")
 *Display 6. The bar plot of star rating percentage in the number of negative words in review body from UK sampling data*
 
 #### 5. Discussion:
