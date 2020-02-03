@@ -1,8 +1,8 @@
 # Selecting Words of Interest from Text Data
 ## PROJECT FINAL REPORT
-_Name: Phuong Ho_
+__Name: Phuong Ho__
 
-* This project aims at generating useful data from text input for further analysis given review data sets. I adopt different approaches to access and to understand the data provided such as PROC SQL, PROC IMPORT, PROC PANEL and so on. Most of the macros implemented to read different keywords and compare them with text read from the data. The project’ purpose is also to evaluate the count of important words related to rating stars. I further build some of the other code blocks to compare the star rating distribution of verified purchases compared to those of not verified purchases. From those steps, I can study the patterns existing in reviews’ ratings across different countries, mainly between the UK and the US, and across different products.. *
+*This project aims at generating useful data from text input for further analysis given review data sets. I adopt different approaches to access and to understand the data provided such as PROC SQL, PROC IMPORT, PROC PANEL and so on. Most of the macros implemented to read different keywords and compare them with text read from the data. The project’ purpose is also to evaluate the count of important words related to rating stars. I further build some of the other code blocks to compare the star rating distribution of verified purchases compared to those of not verified purchases. From those steps, I can study the patterns existing in reviews’ ratings across different countries, mainly between the UK and the US, and across different products..*
 
 #### 1. Introduction: 
 
@@ -97,7 +97,7 @@ numWords	1	172.87	<.0001
 
 
 
-* Display 3. The selected table as a result of PROC GENMOD to model Poisson distribution between helpful votes and number of words in review headline from US sampling data *
+*Display 3. The selected table as a result of PROC GENMOD to model Poisson distribution between helpful votes and number of words in review headline from US sampling data*
 
 
 LR Statistics For Type 3 Analysis
