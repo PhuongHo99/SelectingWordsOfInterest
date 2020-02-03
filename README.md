@@ -24,26 +24,33 @@ One of the important terms I also have to learn is the meaning is the term helpf
 
 Due to the shortcomings of using remote desktop memory, I could not download the file .gz to load data. Thus, I resolved this problem by using part of all the records in two data sets from the US and the UK marketplace as the sampling files. I extracted the first 3000 rows into tab-separated text files and upload them to the remote disk. However, I still include the PROC HTTP at the end of source codes to unzip .gz files for your references.
 The specific data sets I used in this project are the following: 
+
 https://s3.amazonaws.com/amazon-reviews-pds/tsv/index.txt
 (the index page with all the data sets)
+
 https://s3.amazonaws.com/amazon-reviews-pds/tsv/sample_fr.tsv
  (all of the rows)
+ 
 https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_multilingual_US_v1_00.tsv.gz
 (the first 3000 rows)
+
 https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_multilingual_UK_v1_00.tsv.gz
 (the first 3000 rows)
 
 Table of the variables used in this report:
 
-Name of Variable	Meaning
-Customer ID	Random identifier that can be used to aggregate reviews written by a single author
-Product ID	The unique Product ID the review pertains to. In the multilingual dataset the reviews for the same product in different countries can be grouped by the same product ID
-Product parent	Random identifier that can be used to aggregate reviews for the same product
-Star rating	The star rating of the review from 1 to 5
-Helpful votes	Number of helpful votes
-Verified purchase	The review is on a verified purchase
-Review headline	The title of the review
-Review body	The review text
+| Name of Variable | Meaning | 
+| ----------- | ----------- |
+| Customer ID  | 	Random identifier that can be used to aggregate reviews written by a single author | 
+| Product ID	  | 	he unique Product ID the review pertains to. In the multilingual dataset the reviews for the same product in different countries can be grouped by the same product ID | 
+| Product parent	 | 		Random identifier that can be used to aggregate reviews for the same product| 
+| Star rating  | The star rating of the review from 1 to 5 | 
+| Helpful votes | Number of helpful votes| 
+| Verified purchase | 	The review is on a verified purchase | 
+| Customer ID  | The review text | 
+| Review headline | 	The title of the review | 
+| Review body | 	The review text | 
+
 
 #### 3. Strategy Employed:
 
