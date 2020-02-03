@@ -42,7 +42,7 @@ Table of the variables used in this report:
 | Name of Variable | Meaning | 
 | ----------- | ----------- |
 | Customer ID  | 	Random identifier that can be used to aggregate reviews written by a single author | 
-| Product ID	  | 	he unique Product ID the review pertains to. In the multilingual dataset the reviews for the same product in different countries can be grouped by the same product ID | 
+| Product ID	  |  Unique Product ID the review pertains to. In the multilingual dataset the reviews for the same product in different countries can be grouped by the same product ID | 
 | Product parent	 | 		Random identifier that can be used to aggregate reviews for the same product| 
 | Star rating  | The star rating of the review from 1 to 5 | 
 | Helpful votes | Number of helpful votes| 
@@ -72,6 +72,8 @@ From then on, I form data sets for words of interest by using INFILE text files 
 
 First of all, from the three stacked bar plots in Display 1, we can see the percentage distribution for the two categories, verified and not verified the purchase, in the total number of customer reviews from the US, UK, and FR marketplaces. In this plot, we can also tell that there is a huge difference between the column from US sampling data and those of the two other countries. In the US sampling plot, the percentage of purchases without verifications (97.8%) is much bigger than that with verifications (2.2%). The other two plots show the opposite result. The UK column shows that the verified purchases covered about 89.4% of the number of reviews. Similarly, France data set’s column shows 93.9% of reviews come from verified payment through Amazon. 
 
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Display1")
  
 *Display 1. Three bar plots of star ratings’ percentage in verified purchases and not verified purchases from the US and UK extracted data and France sample data.*
 
