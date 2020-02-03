@@ -72,13 +72,13 @@ From then on, I form data sets for words of interest by using INFILE text files 
 
 First of all, from the three stacked bar plots in Display 1, we can see the percentage distribution for the two categories, verified and not verified the purchase, in the total number of customer reviews from the US, UK, and FR marketplaces. In this plot, we can also tell that there is a huge difference between the column from US sampling data and those of the two other countries. In the US sampling plot, the percentage of purchases without verifications (97.8%) is much bigger than that with verifications (2.2%). The other two plots show the opposite result. The UK column shows that the verified purchases covered about 89.4% of the number of reviews. Similarly, France data set’s column shows 93.9% of reviews come from verified payment through Amazon. 
 
-![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest.Picture1png "Display1")
+![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest/blob/master/Picture1.png "Display1")
  
 *Display 1. Three bar plots of star ratings’ percentage in verified purchases and not verified purchases from the US and UK extracted data and France sample data.*
 
 Display 2 presents the panel of frequency of star ratings in verified and not verified purchase for different marketplaces. While the plots from France and the UK sampling data suggests the frequency of star ratings in non-verified purchases does not vary as much as that on verified purchases, the plots from US sampling data show a reverse result. The contradictory between the three plots might happen as a result of the date range I select when extracting data. The first 3000 rows of the UK data and 50 rows of France sample data are retrieved between the year 2014 and 2015 while the first 3000 rows of the US data are from 1995 to 1998. However, this possibility of cause needs more investigations to justify. 
 
-![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest.Picture2png "Display2")
+![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest/blob/master/Picture2.png "Display2")
  
 *Display 2. The Panel for bar plots showing star ratings’ frequencies in verified purchases and not verified purchases from the US and UK extracted data and France sample data.*
 
@@ -112,10 +112,10 @@ numWords	1	3146.50	<.0001
 
 In Display 5 and Display 6, the distribution of star ratings having negative words in the review body from the US and UK sampling data is shown. This is fairly interesting since the highest rating (5 stars) has the most percentage in the total number of negative words in both countries the US and UK (respectively 62.2% and 55.4%). This might be because the percentage of 5-star rating reviews is the largest from the US and UK data presented in Display 1, but further justifications and tests will be needed. I also try to use the same MACRO for plotting positive words with both of the sampling data above. The percentage of positive words increases as the star rating increases, which is explainable. As people love the products, they will use a lot of good words to describe it.
 
- ![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest.Picture5png "Display5")
+ ![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest/blob/master/Picture5.png"Display5")
 *Display 5. The bar plot of star rating percentage in the number of negative words in review body from US sampling data*
 
- ![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest.Picture6png "Display6")
+ ![alt text](https://github.com/PhuongHo99/SelectingWordsOfInterest/blob/master/Picture6.png "Display6")
 *Display 6. The bar plot of star rating percentage in the number of negative words in review body from UK sampling data*
 
 #### 5. Discussion:
